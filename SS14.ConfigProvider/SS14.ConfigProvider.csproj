@@ -11,18 +11,21 @@
 
         <!-- NuGet stuff. -->
 
-        <PackageDescription>Database config provider</PackageDescription>
-        <PackageProjectUrl>https://github.com/space-wizards/ConfigProvider</PackageProjectUrl>
-        <RepositoryUrl>https://github.com/space-wizards/ConfigProvider.git</RepositoryUrl>
+        <PackageId>SpaceWizards.ConfigProvider</PackageId>
+        <Authors>Julian Giebel, Space Wizards</Authors>
         <RepositoryType>Git</RepositoryType>
-        <PackageTags>configuration</PackageTags>
-        <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+        <RepositoryUrl>https://github.com/space-wizards/ConfigProvider</RepositoryUrl>
+        <PackageProjectUrl>https://github.com/space-wizards/ConfigProvider</PackageProjectUrl>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
-        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageTags>configuration</PackageTags>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <Description>Database config provider.</Description>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageIcon>icon.png</PackageIcon>
+
+        <!-- SourceLink -->
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
-        <EmbedUntrackedSources>true</EmbedUntrackedSources>
     </PropertyGroup>
 
     <ItemGroup>
