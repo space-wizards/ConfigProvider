@@ -1,24 +1,33 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
     <PropertyGroup>
         <TargetFramework>net9.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <PackageId>SpaceWizards.ConfigProvider</PackageId>
+        <AssemblyName>SpaceWizards.ConfigProvider</AssemblyName>
         <Version>1.0.0</Version>
-        <Authors>Julian Giebel</Authors>
+        <Authors>Julian Giebel, Space Wizards</Authors>
+
+
+        <!-- NuGet stuff. -->
+
         <PackageDescription>Database config provider</PackageDescription>
         <PackageProjectUrl>https://github.com/space-wizards/ConfigProvider</PackageProjectUrl>
         <RepositoryUrl>https://github.com/space-wizards/ConfigProvider.git</RepositoryUrl>
+        <RepositoryType>Git</RepositoryType>
         <PackageTags>configuration</PackageTags>
         <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <PackageIcon>icon.png</PackageIcon>
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <EmbedUntrackedSources>true</EmbedUntrackedSources>
     </PropertyGroup>
 
     <ItemGroup>
       <PackageReference Include="JetBrains.Annotations" Version="2024.3.0" />
+      <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All"/>
       <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.4" />
       <PackageReference Include="Microsoft.Extensions.Configuration" Version="9.0.4" />
       <PackageReference Include="MinVer" Version="6.0.0">
@@ -33,4 +42,7 @@
         <None Include="../icon.png" Pack="true" PackagePath="\"/>
     </ItemGroup>
 
+    <PropertyGroup Condition="'$(GITHUB_ACTIONS)' == 'true'">
+        <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+    </PropertyGroup>
 </Project>
