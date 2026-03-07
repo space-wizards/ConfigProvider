@@ -36,6 +36,7 @@ public sealed class DbConfigurationSource<TContext> : IConfigurationSource where
     /// </summary>
     public int PeriodInSeconds { get; init; } = 5;
 
+    /// <inheritdoc />
     public IConfigurationProvider Build(IConfigurationBuilder builder) =>
         new DbConfigurationProvider<TContext>(this);
 }
