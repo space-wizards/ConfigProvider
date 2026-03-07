@@ -4,7 +4,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <AssemblyName>SpaceWizards.ConfigProvider</AssemblyName>
-        <Version>1.0.2</Version>
+        <Version>1.1.0-dev1</Version>
         <Authors>Julian Giebel, Space Wizards</Authors>
 
 
