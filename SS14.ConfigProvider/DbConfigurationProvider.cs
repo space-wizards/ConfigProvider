@@ -70,6 +70,26 @@ public sealed class DbConfigurationProvider<TContext> : ConfigurationProvider, I
         context.SaveChanges();
     }
 
+    /// <summary>
+    /// Reloads the settings for the specified collection of keys from the configuration database.
+    /// </summary>
+    /// <param name="keys">The collection of keys whose corresponding settings should be reloaded.</param>
+    public void ReloadSettings(IReadOnlyCollection<string> keys)
+    {
+        using var context = (TContext)Activator.CreateInstance(_contextOptions.ContextType, _contextOptions)!;
+        
+        var loadedSettings = context.ConfigurationStore
+            .Where(c => keys.Contains(c.Name))
+            .ToDictionary(c => c.Name, c => c.Value);
+
+        foreach (var setting in loadedSettings)
+        {
+            Data[setting.Key] = setting.Value;
+        }
+        
+        OnReload();
+    }
+    
     private void ReloadSettings(object? state)
     {
         Load();
