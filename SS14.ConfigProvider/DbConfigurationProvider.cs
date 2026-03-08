@@ -70,6 +70,7 @@ public sealed class DbConfigurationProvider<TContext> : ConfigurationProvider, I
         context.SaveChanges();
     }
 
+    // TODO: Handle removed configuration values
     /// <summary>
     /// Reloads the settings for the specified collection of keys from the configuration database.
     /// </summary>
